@@ -1,0 +1,56 @@
+:host{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #5a60a4, #1c163c);
+  .info-board-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .market-logo-container{
+      padding: 8px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: flex-end;
+      .header{
+        color: white;
+        font-size: 30px;
+        padding-right: 10px;
+      }
+      .market-logo{
+        color: white;
+      }
+    }
+    .info-container{
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding-bottom: 10px;
+      .info-item{
+        display: flex;
+        color: white;
+        display: flex;
+        align-items: flex-end;
+        .value{
+          margin-right: 10px;
+          font-size: 18px;
+        }
+        &.middle{
+          .ball-logo{;
+            color: indianred;
+          }
+        }
+        &.left{
+          .ball-logo{
+            color: white;
+          }
+        }
+        &.right{
+          .ball-logo{
+            color: darkkhaki;
+          }
+        }
+      }
+    }
+  }
+}

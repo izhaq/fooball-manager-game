@@ -1,0 +1,29 @@
+<div class="players-list-container">
+  <div class="header">
+    <div class="item price">
+      <span [ngClass]="{'desc': isColumnSorted('price', -1),  'asc': isColumnSorted('price', 1)}">
+        </span>
+      <span class="description" (click)="sortBy('price')">מחיר</span>
+    </div>
+    <div class="item score">
+      <span [ngClass]="{'desc': isColumnSorted('score', -1),  'asc': isColumnSorted('score', 1)}">
+        </span>
+      <span class="description" (click)="sortBy('score')">נקודות</span>
+    </div>
+    <div class="item name">
+      <span [ngClass]="{'desc': isColumnSorted('name', -1),  'asc': isColumnSorted('name', 1)}">
+        </span>
+      <span class="description" (click)="sortBy('name')">שם השחקן</span>
+    </div>
+    <div class="item position">
+      <span [ngClass]="{'desc': isColumnSorted('popularity', -1),  'asc': isColumnSorted('popularity', 1)}">
+        </span>
+      <span class="description" (click)="sortBy('popularity')">פופולריות</span>
+    </div>
+    <div class="item logo">
+    </div>
+  </div>
+  <div class="list-container">
+    <app-player *ngFor="let player of players | async" [player]="player" (playerSelected)="onPlayerSelect($event)"></app-player>
+  </div>
+</div>

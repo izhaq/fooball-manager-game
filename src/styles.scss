@@ -1,0 +1,99 @@
+@import "assets/variables";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid"; // add the grid
+@import "~bootstrap/scss/utilities"; // add css utilities
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Football-Transfer-Market-App-primary: mat-palette($mat-indigo);
+$Football-Transfer-Market-App-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Football-Transfer-Market-App-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Football-Transfer-Market-App-theme: mat-light-theme((
+  color: (
+    primary: $Football-Transfer-Market-App-primary,
+    accent: $Football-Transfer-Market-App-accent,
+    warn: $Football-Transfer-Market-App-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Football-Transfer-Market-App-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-select {
+  border: white solid 1px;
+  border-radius: 30px;
+  height: 40px;
+  background-color: white;
+  padding-left: 10px;
+
+  .mat-select-trigger {
+    height: 100%;
+
+    .mat-select-value {
+      height: 100%;
+      color: black;
+
+      .mat-select-value-text {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        font-size: 17px;
+      }
+    }
+
+    .mat-select-arrow-wrapper {
+      background-color: white;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 30px;
+
+      .mat-select-arrow {
+        color: black;
+        border-left-width: 6px;
+        border-right-width: 6px;
+        border-bottom-width: 6px;
+      }
+    }
+  }
+
+  .mat-select-panel{
+    background-color: #1a89b2;
+  }
+
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background-color: white;
+  border-radius: 30px;
+}
+
+.mat-select .mat-select-trigger .mat-select-value .mat-select-value-text{
+  font-size: 20px;
+  justify-content: center;
+}

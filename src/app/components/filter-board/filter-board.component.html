@@ -1,0 +1,42 @@
+<div class="filter-board">
+  <div class="top">
+    <div class="range-filter">
+      <span class="range-filter-header sub-header">בחר טווח מחירים</span>
+      <div class="inputs-range">
+        <input type="text" [(ngModel)]="minPrice" (ngModelChange)="onFilterSelected($event, 'minPrice')" >
+        <input type="text" [(ngModel)]="maxPrice" (ngModelChange)="onFilterSelected($event, 'maxPrice')" >
+      </div>
+    </div>
+    <div class="position-filter">
+      <span class="sub-header">בחר תפקיד</span>
+      <div class="position-filter-body">
+        <div class="position-options">
+          <div class="option" (click)="selectedPosition = 'fw'; onFilterSelected('חלוץ', 'position')"
+               [ngClass]="{'position-filter-selected': selectedPosition === 'fw'}">FW</div>
+          <div class="option" (click)="selectedPosition = 'md'; onFilterSelected('קשר', 'position')"
+               [ngClass]="{'position-filter-selected': selectedPosition === 'md'}">MD</div>
+          <div class="option" (click)="selectedPosition = 'df'; onFilterSelected('מגן', 'position')"
+               [ngClass]="{'position-filter-selected': selectedPosition === 'df'}">DF</div>
+          <div class="option" (click)="selectedPosition = 'gk'; onFilterSelected('שוער', 'position')"
+               [ngClass]="{'position-filter-selected': selectedPosition === 'gk'}">GK</div>
+          <div class="option" (click)="selectedPosition = 'all'; onFilterSelected('-100', 'position')"
+               [ngClass]="{'position-filter-selected': selectedPosition === 'all'}">הכל</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="middle">
+    <div class="players">
+      <span class="sub-header">שם השחקן</span>
+      <app-dropdown [placeholder]="'כל השחקנים'" [options]="(players | async) || []" (itemSelectedEvent)="onPlayerSelected($event)"></app-dropdown>
+    </div>
+    <div class="clubs">
+      <span class="sub-header">בחר מועדון</span>
+      <app-dropdown [placeholder]="'כל המועדונים'" [options]="(clubs | async) || []" (itemSelectedEvent)="onClubSelected($event)"></app-dropdown>
+    </div>
+  </div>
+  <div class="bottom">
+    מיון לפי
+  </div>
+</div>
+

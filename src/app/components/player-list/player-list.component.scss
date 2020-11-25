@@ -1,0 +1,69 @@
+:host{
+ display: block;
+  height: 100%;
+  width: 100%;
+  .players-list-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .header{
+      background: #d5d3d4;
+      height: 30px;
+      display: flex;
+      .item{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        .description{
+          padding-left: 10px;
+          padding-right: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 16px;
+        }
+        .desc {
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 10px solid #108bbc;
+          cursor: pointer;
+        }
+        .asc{
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 10px solid #108bbc;
+          cursor: pointer;
+        }
+        &.logo{
+          width: 120px;
+        }
+        &.position{
+          width: 100px;
+          justify-content: center
+        }
+        &.name{
+          flex: 1;
+          justify-content: center;
+        }
+        &.score{
+          flex: 0.5;
+          justify-content: center;
+        }
+        &.price{
+          flex: 0.5;
+          justify-content: flex-end;
+        }
+      }
+    }
+    .list-container{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}

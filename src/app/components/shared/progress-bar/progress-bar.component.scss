@@ -1,0 +1,25 @@
+:host{
+  display: block;
+  .popularity{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 3px;
+    background: white;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    .popularity-indicator{
+      width: 100%; /* in this case 20% would be the current progress */
+      height: 100%;
+      border-radius: 100%;/*
+            background: linear-gradient(to top, #1289c4 10%,#909494 10%, #909494 100%)*/
+    }
+    .popularity-value{
+      position: absolute;
+      color: white;
+      top: 35%;
+      left: 25%;
+    }
+  }
+}

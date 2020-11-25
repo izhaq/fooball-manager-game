@@ -1,0 +1,26 @@
+:host{
+  display: block;
+  height: 100%;
+  width: 100%;
+  .app-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    app-info-board{
+      display: block;
+      height: 150px;
+      width: 100%;
+    }
+    app-filter-board{
+      display: block;
+      height: 250px;
+      width: 100%;
+    }
+    app-player-list{
+      display: block;
+      height: calc(100% - 400px);
+      width: 100%;
+    }
+  }
+}

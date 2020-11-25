@@ -1,0 +1,132 @@
+@import "src/assets/variables";
+:host{
+  display: block;
+  height: 100px;
+  background: $player-background-color;
+  .player-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    &.defender{
+      .position{
+        background: #639929;
+      }
+    }
+    &.striker{
+      .position{
+       background: #ad191e;
+      }
+    }
+    &.goalkeeper{
+      .position{
+        background: #1a89b2;
+      }
+    }
+    &.middleFielder{
+      .position{
+        background: #ffb941;
+      }
+    }
+    .player-details{
+      flex: 1;
+      height: 100%;
+      border-bottom: 1px solid $player-border-color;
+      display: flex;
+      flex-direction: column;
+      .header{
+        height: 30px;
+        border-bottom: 0.5px solid $player-border-color;
+        display: flex;
+        align-items: flex-end;
+        font-size: 16px;
+        .inner-header-container{
+          display: flex;
+          height: 80%;
+          flex: 1;
+          padding-bottom: 1px;
+          .position{
+            width: 100px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+          }
+          .team{
+            padding-left: 10px;
+            padding-right: 10px;
+            flex: 1;
+            border-right: 0.5px solid $player-border-color;
+            display: flex;
+            justify-content: flex-end;
+          }
+          .name{
+            padding-left: 10px;
+            padding-right: 10px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+      .body{
+        display: flex;
+        height: 70px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        .popularity{
+          height: 100%;
+          width: 80px;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .score{
+          padding-right: 10px;
+          padding-left: 10px;
+          flex: 0.5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        .status{
+          padding: 10px;
+          flex: 0.5;
+          display: flex;
+          justify-content: flex-end;
+          .purchase-button{
+            height: 100%;
+            width: 70px;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(0deg, #108bbc, #5a60a4);
+            &.taken{
+              background: #7a7876;
+            }
+            &:focus{
+              outline: none;
+            }
+            &:active{
+              background: lightgrey;
+              color: black;
+            }
+          }
+        }
+        .next-game-description{
+          flex: 1;
+        }
+      }
+    }
+    .player-logo{
+      height: 100%;
+      width: 120px;
+      border: 1px solid $player-background-color;
+      display: flex;
+      padding-right: 8px;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+}

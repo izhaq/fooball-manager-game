@@ -1,0 +1,20 @@
+<div class="info-board-container">
+  <div class="market-logo-container">
+    <div class="header">שוק ההעברות</div>
+    <fa-icon class="market-logo" icon="warehouse" size="3x" primaryColor="red"></fa-icon>
+  </div>
+  <div class="info-container">
+    <div class="info-item left">
+      <span class="value"></span>
+      <fa-icon class="ball-logo" icon="futbol" size="2x" primaryColor="red"></fa-icon>
+    </div>
+    <div class="info-item middle">
+      <span class="value">{{((budget | async) || 0) | convertToShortNumber}}</span>
+      <fa-icon class="ball-logo" icon="futbol" size="2x" primaryColor="red"></fa-icon>
+    </div>
+    <div class="info-item right">
+      <span class="value"></span>
+      <fa-icon class="ball-logo" icon="futbol" size="2x" primaryColor="red"></fa-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<mat-select  class="choice-list" panelClass="choice-options" (selectionChange)="onSelectedOption($event)" [(value)]="selectedValue">
+  <mat-option [id]="placeholder" [value]="placeholder" >{{placeholderValue}}</mat-option>
+  <mat-option [id]="option.code" [value]="option" *ngFor="let option of options">{{ formatter ? formatter(option.value): option.value }}</mat-option>
+</mat-select>
